@@ -1,0 +1,22 @@
+@import "../variables";
+.favTitle {
+  margin: 10px;
+  position: absolute;
+}
+.favorites {
+  width: 100%;
+  
+  .noFavs{
+    padding: 20px;
+    @extend %Roboto;
+  }
+}
+@media only screen and (min-width: $tabletWidth) {
+  .favorites {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px 0px 0px;
+    margin: 20px 0px;
+    justify-content: center;
+}
+}

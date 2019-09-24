@@ -1,0 +1,56 @@
+@import "../variables";
+
+.launch {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: $color2;
+  margin: 10px 0px;
+  padding: 10px;
+  @extend %Audiowide;
+  justify-content: center;
+
+  button {
+    background-color: transparent;
+    border: transparent;
+  }
+  .launchTitle {
+    width: 80%;
+  }
+  .favoriteButton {
+    font-size: 30px;
+    color: pink;
+    padding: 5px;
+    height: 30px;
+    width: 50px;
+    margin: 20px 0px;
+  }
+  .favoriteButton:hover {
+    cursor: pointer;
+  }
+  .launchDesc {
+    @extend %Roboto;
+  }
+  .descButton {
+    @extend %Audiowide;
+    margin: 5px 0px;
+  }
+  .descButton:hover {
+    cursor: pointer;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: $tabletWidth) {
+  .launch {
+    margin: 5px 5px;
+    width: 280px;
+    flex: 0;
+  }
+  .launch:last-of-type {
+    justify-self: flex-start;
+  }
+  .launchDesc {
+    margin: 10xp 0px;
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../../variables";
+
+.payloadList {
+  background-color: lightgray;
+  padding: 0px;
+  width: 100%;
+  .payloadHeader {
+    margin: 5px;
+  }
+  .payloadButton {
+      @extend %Audiowide;
+      margin: 10px;
+  }
+  .payloadButton:hover {
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .payloadItem {
+    padding: 5px 0px;
+    /*
+        display: grid;
+        grid-template: repeat(3, 1fr) / 90px 1fr;/**/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @extend %Roboto;
+
+    .payloadTitle {
+      padding: 5px 0px;
+      margin: 0px;
+      text-align: right;
+      font-weight: 600;
+    }
+    .payloadDesc {
+      margin: 0px 10px 0px 5px;
+      padding: 5px 5px 5px 0px;
+      width: 70%;
+    }
+  }
+}
+@media only screen and (min-width: $tabletWidth) {
+}

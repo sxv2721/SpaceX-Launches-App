@@ -1,0 +1,26 @@
+@import "../../../variables";
+
+.launchImg {
+  width: 100%;
+}
+.flickrImg {
+  margin: 5px 0px;
+  height: 200px;
+  width: 280px;
+}
+.showImagesButton{
+    @extend %Roboto;
+    justify-self: center;
+}
+.showImagesButton:hover {
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+@media only screen and (min-width: $tabletWidth) {
+  .launchImg {
+    margin: 5px 0px;
+    height: 280px;
+    width: 280px;
+  }
+}

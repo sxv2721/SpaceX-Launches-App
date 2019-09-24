@@ -1,0 +1,24 @@
+using: moment, sass, axios
+      moment for time data
+      sass for css variables, etc
+      axios to fetch data because ie doesn't use regular fetch because it sucks
+
+      Launches
+
+      Start Date
+      End Date
+
+      Favorites. Contains favorite launches. Only renders if you have favorites
+
+      Shows each launch between the dates. 
+
+      Launch format:
+      Image
+      Title     Heart to favorite
+      Date
+      Description/payload
+
+      Mobile 1 per row
+
+      tablet+ multiple per row
+    

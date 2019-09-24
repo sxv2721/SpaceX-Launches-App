@@ -1,0 +1,32 @@
+@import "../variables";
+.dateInput {
+  display: grid;
+  grid-template: 1fr 1fr / 100px 225px;
+  justify-content: center;
+  @extend %Audiowide;
+  .dateLabel {
+    padding-top: 5px;
+    @extend %Roboto;
+  }
+  #startDate,
+  #endDate,
+  .dateLabel {
+    margin: 10px;
+    font-size: 15px;
+  }
+  .dateSubmit {
+    margin: 10px;
+    width: 90px;
+    padding: 0px;
+    background-color: gray;
+    justify-self: flex-end;
+    grid-column: 1/3;
+    @extend %Audiowide;
+  }
+  .dateSubmit:hover {
+    cursor: pointer;
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: $tabletWidth) {
+}

@@ -1,0 +1,22 @@
+@import "components/variables";
+body {
+  background-color: $color1;
+
+  @extend %Audiowide;
+}
+.app {
+  margin: 10px;
+  .headerTitle{
+    text-align: center;
+  }
+  .searchTitle {
+    margin: 10px;
+    @extend %Roboto;
+    text-align: center;
+  }
+}
+
+
+
+@media only screen and (min-width: $tabletWidth) {
+}

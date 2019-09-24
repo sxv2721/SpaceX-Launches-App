@@ -1,0 +1,18 @@
+@import "../variables";
+
+.launches {
+  width: 100%;
+}
+@media only screen and (min-width: $tabletWidth) {
+  .launches {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 20px 0px;
+  }
+  .launches:last-child{
+      justify-content: center;
+      
+  }
+}
