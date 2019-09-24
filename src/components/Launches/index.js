@@ -13,12 +13,14 @@ export class Launches extends React.Component {
     componentDidMount = () => {
         
     }
-    UNSAFE_componentWillReceiveProps = ({start, end}) => {
+    UNSAFE_componentWillReceiveProps = ({start, end, callback,favorites}) => {
         const queryString = ("start=" + start + "&end=" + end);
         Axios.get('https://api.spacexdata.com/v3/launches/past?' + queryString)
             .then((response) => {
+                console.log(favorites);
                 this.setState({
                     launches: response.data.map((launch, index) => {
+                        console.log(favorites.includes(launch.flight_number));
                         return <Launch
                             key={"Launch" + index}
                             links={launch.links}
@@ -28,7 +30,7 @@ export class Launches extends React.Component {
                             payloads={launch.rocket.second_stage.payloads}
                             number={launch.flight_number}
                             favoriteCallBack={this.props.favoriteCallBack}
-                            heart={false}
+                            heart={favorites.includes(launch.flight_number)}
                         />;
 
                     })

@@ -59,7 +59,7 @@ class App extends React.Component {
         <main>
           <Favorites favorites={this.state.favorites} favoriteCallBack={this.favoriteCallBack} />
           <h3 className="searchTitle">{"SpaceX launches from " + this.state.startDate + " to " + this.state.endDate}</h3>
-          <Launches start={this.state.startDate} end={this.state.endDate} favoriteCallBack={this.favoriteCallBack} />
+          <Launches start={this.state.startDate} end={this.state.endDate} favoriteCallBack={this.favoriteCallBack} favorites={this.state.favorites}/>
         </main>
       </div>
     );

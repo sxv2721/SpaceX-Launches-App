@@ -11,6 +11,7 @@
 .showImagesButton{
     @extend %Roboto;
     justify-self: center;
+    height: 25px;
 }
 .showImagesButton:hover {
     cursor: pointer;

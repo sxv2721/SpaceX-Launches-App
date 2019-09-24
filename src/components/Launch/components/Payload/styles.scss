@@ -1,7 +1,7 @@
 @import "../../../variables";
 
 .payloadList {
-  background-color: lightgray;
+  background-color: $color1;
   padding: 0px;
   width: 100%;
   .payloadHeader {
@@ -9,7 +9,11 @@
   }
   .payloadButton {
       @extend %Audiowide;
+      text-align: center;
       margin: 10px;
+      height: 40px;
+      width: 90%;
+      
   }
   .payloadButton:hover {
     cursor: pointer;

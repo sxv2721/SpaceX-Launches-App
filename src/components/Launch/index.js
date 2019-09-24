@@ -16,6 +16,19 @@ export class Launch extends React.Component {
             descBool: false
         }
     }
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        if (nextProps.heart === true) {
+            this.setState({
+                heartBool: true
+            })
+        }
+        else {
+            this.setState({
+                heartBool: false
+            })
+        }
+    }
+    
     render() {
         return (
             <section className="launch">
