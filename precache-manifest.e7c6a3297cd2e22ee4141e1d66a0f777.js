@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "44f3eb2176c1762857d8f384e60d8589",
+    "revision": "752ba1ddd029a3b93d227ccf0537531d",
     "url": "/SpaceX-Launches-App/index.html"
   },
   {
-    "revision": "e8b5418330684d38576d",
-    "url": "/SpaceX-Launches-App/static/css/main.310a2a4c.chunk.css"
+    "revision": "972ef0a9d16c59f783c0",
+    "url": "/SpaceX-Launches-App/static/css/main.b24ed240.chunk.css"
   },
   {
     "revision": "b81644201592e4c4d53e",
     "url": "/SpaceX-Launches-App/static/js/2.c306f470.chunk.js"
   },
   {
-    "revision": "e8b5418330684d38576d",
-    "url": "/SpaceX-Launches-App/static/js/main.b7aada45.chunk.js"
+    "revision": "972ef0a9d16c59f783c0",
+    "url": "/SpaceX-Launches-App/static/js/main.832bc196.chunk.js"
   },
   {
     "revision": "d12f9907e449d343ed40",
