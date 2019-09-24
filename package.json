@@ -2,7 +2,7 @@
   "name": "rocketapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://sxv2721.github.io/SpaceX-Launch-App",
+  "homepage": "https://sxv2721.github.io/SpaceX-Launch-App",
   "dependencies": {
     "@babel/core": "7.5.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
