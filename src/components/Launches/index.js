@@ -13,7 +13,9 @@ export class Launches extends React.Component {
     componentDidMount = () => {
         
     }
-    UNSAFE_componentWillReceiveProps = ({start, end, callback,favorites}) => {
+    //do this in a redux reducer
+    //read about fetch api
+    UNSAFE_componentWillReceiveProps = ({start, end, callback,favorites}) => { // update
         const queryString = ("start=" + start + "&end=" + end);
         Axios.get('https://api.spacexdata.com/v3/launches/past?' + queryString)
             .then((response) => {

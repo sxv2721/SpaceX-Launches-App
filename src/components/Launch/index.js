@@ -1,4 +1,6 @@
 import React from 'react';
+import { createStore } from 'redux';
+import ReactRedux from 'react-redux';
 import { Payload } from './components/Payload';
 import { LaunchImage } from './components/LaunchImage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,6 +8,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import Moment from 'moment';
 import "./styles.scss";
+
 
 //{img, title, date, desc, payload}
 export class Launch extends React.Component {
@@ -28,7 +31,7 @@ export class Launch extends React.Component {
             })
         }
     }
-    
+
     render() {
         return (
             <section className="launch">

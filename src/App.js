@@ -1,7 +1,10 @@
 import React from 'react';
+import {connect, Provider} from 'react-redux';
 import { DateInput } from './components/DateInput';
 import { Favorites } from './components/Favorites';
 import { Launches } from './components/Launches';
+import { mapStateToLaunches, mapDispatchToLaunches} from './components/reducers';
+
 import './App.scss';
 
 class App extends React.Component {
@@ -45,6 +48,7 @@ class App extends React.Component {
       favorites: [...this.state.favorites, number]
     });
   }
+  //LaunchesContainer = connect(mapStateToLaunches, mapDispatchToLaunches)(Launches);
   componentDidUpdate() {
   }
 
@@ -59,7 +63,12 @@ class App extends React.Component {
         <main>
           <Favorites favorites={this.state.favorites} favoriteCallBack={this.favoriteCallBack} />
           <h3 className="searchTitle">{"SpaceX launches from " + this.state.startDate + " to " + this.state.endDate}</h3>
-          <Launches start={this.state.startDate} end={this.state.endDate} favoriteCallBack={this.favoriteCallBack} favorites={this.state.favorites}/>
+          {/* <Provider state={this.props.state}> */}
+            <Launches start={this.state.startDate} 
+          end={this.state.endDate} 
+          favoriteCallBack={this.favoriteCallBack} 
+          favorites={this.state.favorites}/> 
+          {/* </Provider> */}
         </main>
       </div>
     );

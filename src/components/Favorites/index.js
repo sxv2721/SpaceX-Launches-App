@@ -14,7 +14,7 @@ export class Favorites extends React.Component {
     componentDidMount = () => {
 
     }
-    UNSAFE_componentWillReceiveProps = ({ favorites }) => {
+    UNSAFE_componentWillReceiveProps = ({ favorites }) => { // update
         console.log(favorites);
         Axios.get('https://api.spacexdata.com/v3/launches/past')
             .then((response) => {
