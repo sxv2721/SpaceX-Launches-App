@@ -37,9 +37,8 @@ export const dateReducer = (state = defaultState, action) => {
                 favoritesData: [...state.favoritesData, state.launchesData[launchIndex]]
             };
         case REMOVE:
-            let favs = state.favoritesData;
+            let favs = [...state.favoritesData]
             let favIndex = favs.indexOf(payload);
-            console.log(favs);
             favs.splice(favIndex, 1);
             return {
                 ...state,

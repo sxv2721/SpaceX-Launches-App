@@ -7,38 +7,11 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import Moment from 'moment';
 import "./styles.scss";
 
-//{img, title, date, desc, payload}
 export class Launch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            heartBool: this.props.heart,
             descBool: false
-        }
-    }
-    /*UNSAFE_componentWillReceiveProps(nextProps) {//update to new method get derived state from props
-        if (nextProps.heart === true) {//need to update 
-            this.setState({
-                heartBool: true
-            })
-        }
-        else {
-            this.setState({
-                heartBool: false
-            })
-        }
-    }*/
-
-    static getDerivedStateFromProps(nextProps, prevState) {
-        if(nextProps.heart!==prevState.heartBool){
-            console.log(nextProps.heart, prevState.heartBool);
-            return {
-                ...prevState,
-                heartBool: nextProps.heart
-            }
-        }
-        else{
-            return null
         }
     }
 
@@ -58,18 +31,15 @@ export class Launch extends React.Component {
                 <h2 className="launchTitle">{data.mission_name}</h2>
                 <button className="favoriteButton"
                     onClick={(e) => {//dispatch favorites actions here.
-                        e.preventDefault();//add if heartbool===true remove if false
-                        if (!this.state.heartBool) {
+                        e.preventDefault();//add if heart===false remove if true
+                        if (!this.props.heart) {
                             this.props.addFavorite(this.props.data);
                         }
                         else {
                             this.props.removeFavorite(this.props.data);
                         }
-                        this.setState({
-                            heartBool: !this.state.heartBool
-                        });
                     }
-                    }>{this.state.heartBool === true ?
+                    }>{this.props.heart === true ?
                         <FontAwesomeIcon icon={faHeart} /> :
                         <FontAwesomeIcon icon={far.faHeart} />}
                 </button>
