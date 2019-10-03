@@ -18,7 +18,6 @@ export class Favorites extends React.Component {
     }
 
     render = () => {
-        console.log(this.props.favorites);
         return (
             <>
                 {this.props.favorites.length > 0 &&
