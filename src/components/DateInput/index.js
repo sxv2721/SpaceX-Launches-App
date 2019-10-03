@@ -9,7 +9,6 @@ export class DateInput extends React.Component {
             start: "1979-09-19",
             end: Moment().format('YYYY-MM-DD'),
         }
-        this.props.callBack(this.state.start, this.state.end);
     }
 
     startChange = (e) => {
@@ -40,7 +39,10 @@ export class DateInput extends React.Component {
                 />
                 <button onClick={(e) => {
                     e.preventDefault();
-                    this.props.callBack(this.state.start, this.state.end)}}
+                    this.props.getLaunches(this.state.start, this.state.end);
+                }
+                    // this.props.callBack(this.state.start, this.state.end)}
+                }
                      className="dateSubmit">Submit</button>
             </form>
         );

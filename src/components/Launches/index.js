@@ -1,6 +1,5 @@
 import React from 'react';
-import Axios from 'axios';
-import { Launch } from '../Launch';
+import Launch  from '../Launch/container';
 import "./styles.scss";
 
 export class Launches extends React.Component {
@@ -11,9 +10,19 @@ export class Launches extends React.Component {
         }
     }
     componentDidMount = () => {
-        
+
     }
-    UNSAFE_componentWillReceiveProps = ({start, end, callback,favorites}) => {
+
+    // getLaunches = (start, end) => {
+    //     Axios.get('https://api.spacexdata.com/v3/launches/past?start=' + start + '&end=' + end)
+    //         .then((response) => {
+    //             return response.data
+    //         }).catch((response) => {
+    //             console.log("error " + response);
+    //         });
+    // }
+
+    /*UNSAFE_componentWillReceiveProps = ({ start, end, callback, favorites }) => {
         const queryString = ("start=" + start + "&end=" + end);
         Axios.get('https://api.spacexdata.com/v3/launches/past?' + queryString)
             .then((response) => {
@@ -38,16 +47,39 @@ export class Launches extends React.Component {
             }).catch((response) => {
                 console.log("error " + response);
             });
-    }
+    }/**/
 
     componentWillUnmount = () => {
     }
     render = () => {
+        console.log("Launches Props");
+        console.log(this.props);
+        // const launchesMap = this.props.launchesData.map((launch, index) => {
+        //     return (<Launch
+        //         key={"Launch" + index}
+        //         links={launch.links}
+        //         title={launch.mission_name}
+        //         date={launch.launch_date_utc}
+        //         desc={launch.details}
+        //         payloads={launch.rocket.second_stage.payloads}
+        //         number={launch.flight_number}
+        //     />)
+        // });
+
         return (
             <div className="launches">
-                {this.state.launches}
+                {this.props.launchesData !== undefined &&
+                    this.props.launchesData.map((launch, index) => {
+                        return (<Launch
+                            key={"Launch" + index}
+                            index={index}
+                            data={launch}
+                            heart={this.props.favorites.includes(launch)}
+                        />)
+                    }) }
             </div>
         );
     }
 }
+
 

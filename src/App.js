@@ -1,12 +1,14 @@
 import React from 'react';
-import { DateInput } from './components/DateInput';
-import { Favorites } from './components/Favorites';
-import { Launches } from './components/Launches';
+//import { DateInput } from './components/DateInput';
+import DateInput from './components/DateInput/container';
+import Favorites from './components/Favorites/container';
+import Launches from './components/Launches/container';
 import './App.scss';
 
+
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       startDate: "1979-09-19",
@@ -37,7 +39,6 @@ class App extends React.Component {
     this.setState({
       favorites: myArr
     });
-    console.log(this.state.favorites);
     this.render();
   }
   addFavorite = (number) => {
@@ -45,7 +46,7 @@ class App extends React.Component {
       favorites: [...this.state.favorites, number]
     });
   }
-  componentDidUpdate() {
+  componentDidMount() {
   }
 
   render = () => {
@@ -57,9 +58,13 @@ class App extends React.Component {
           <DateInput callBack={this.dateCallBack} />
         </header>
         <main>
-          <Favorites favorites={this.state.favorites} favoriteCallBack={this.favoriteCallBack} />
-          <h3 className="searchTitle">{"SpaceX launches from " + this.state.startDate + " to " + this.state.endDate}</h3>
-          <Launches start={this.state.startDate} end={this.state.endDate} favoriteCallBack={this.favoriteCallBack} favorites={this.state.favorites}/>
+          <Favorites />
+          <h3 className="searchTitle">
+            {"SpaceX launches from " +
+              this.state.startDate + " to " +
+              this.state.endDate}
+          </h3>
+          <Launches />
         </main>
       </div>
     );
