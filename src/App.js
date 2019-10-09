@@ -16,36 +16,6 @@ class App extends React.Component {
       favorites: []
     }
   }
-  dateCallBack = (start, end) => {
-    if (start < end) {
-      this.setState({
-        startDate: start,
-        endDate: end,
-      });
-    }
-  }
-  favoriteCallBack = (number) => {
-    for (let i = 0; i < this.state.favorites.length; i++) {
-      if (this.state.favorites[i] === number) {
-        this.removeFavorite(i);
-        return;
-      }
-    }
-    this.addFavorite(number);
-  }
-  removeFavorite = (index) => {
-    const myArr = this.state.favorites;
-    myArr.splice(index, 1);
-    this.setState({
-      favorites: myArr
-    });
-    this.render();
-  }
-  addFavorite = (number) => {
-    this.setState({
-      favorites: [...this.state.favorites, number]
-    });
-  }
   componentDidMount() {
   }
 
@@ -55,7 +25,7 @@ class App extends React.Component {
         <header>
           <link href="https://fonts.googleapis.com/css?family=Audiowide|Notable|Roboto|Saira+Stencil+One|Turret+Road&display=swap" rel="stylesheet" />
           <h1 className="headerTitle">Launches</h1>
-          <DateInput callBack={this.dateCallBack} />
+          <DateInput />
         </header>
         <main>
           <Favorites />

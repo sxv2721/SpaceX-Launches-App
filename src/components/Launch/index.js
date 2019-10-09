@@ -11,27 +11,36 @@ export class Launch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            descBool: false
+            allBool: false,
+            descBool: false,
+            imgBool: false,
+            payloadBool: false
         }
     }
+    /*
+            links
+            mission_name
+            launch_date_utc
+            details
+            rocket.second_stage.payloads
+            flight_number
+    */
 
     render() {
-        /*
-            links={launch.links}
-            title={launch.mission_name}
-            date={launch.launch_date_utc}
-            desc={launch.details}
-            payloads={launch.rocket.second_stage.payloads}
-            number={launch.flight_number}
-        */
-       const data = this.props.data;
+        const data = this.props.data;
         return (
-            <section className="launch">
-                <LaunchImage links={data.links} />
+            <section className="launch" onClick={() => {
+                this.setState({
+                    allBool: !this.state.allBool,
+                    descBool: !this.state.allBool,
+                    imgBool: !this.state.allBool,
+                    payloadBool: !this.state.allBool,
+                })
+            }}>
+                <LaunchImage links={data.links} imgBool={this.state.imgBool} />
                 <h2 className="launchTitle">{data.mission_name}</h2>
                 <button className="favoriteButton"
                     onClick={(e) => {//dispatch favorites actions here.
-                        e.preventDefault();//add if heart===false remove if true
                         if (!this.props.heart) {
                             this.props.addFavorite(this.props.data);
                         }
@@ -45,17 +54,20 @@ export class Launch extends React.Component {
                 </button>
                 <h2 className="launchDate">{Moment(data.launch_date_utc).format('MMMM Do YYYY, h:mm:ss a')}</h2>
                 {data.details !== null &&
-                    <button className="descButton" onClick={() => {
-                        this.setState({
-                            descBool: !this.state.descBool
-                        })
-                    }}>
-                        {this.state.descBool === false ? <>Show Description</> : <>Hide Description</>}
-                    </button>
-                }
-                {this.state.descBool === true && <p className="launchDesc">{data.details}</p>}
+                    <>
+                        <button className="descButton" onClick={() => {
+                            this.setState({
+                                descBool: !this.state.descBool
+                            })
+                        }}>
+                            {this.state.descBool === false ? <>Show Description</> : <>Hide Description</>}
+                        </button>
+                        {this.state.descBool === true && <p className="launchDesc">{data.details}</p>}
+                    </>
 
-                <Payload payloads={data.rocket.second_stage.payloads} />
+                }
+
+                <Payload payloads={data.rocket.second_stage.payloads} payloadBool={this.state.payloadBool} />
             </section>
         );
     }

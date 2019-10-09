@@ -4,8 +4,8 @@ import "./styles.scss";
 export class LaunchImage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            showImages: false
+        this.state = {//need to add derivedstatefromprops(nextProps, prevState)
+            showImages: this.props.imgBool || false
         }
     }
     showImagesUpdate = () => {

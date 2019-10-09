@@ -2,10 +2,10 @@ import React from 'react';
 import "./styles.scss";
 
 export class Payload extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
-            clickBool: false
+            clickBool: this.props.payloadBool || false
         }
     }
     showPayloads = () =>{

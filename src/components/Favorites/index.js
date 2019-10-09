@@ -9,13 +9,6 @@ export class Favorites extends React.Component {
             launches: []
         }
     }
-    componentDidMount = () => {
-
-    }
-
-    componentWillUnmount = () => {
-        console.log("unmounted");
-    }
 
     render = () => {
         return (

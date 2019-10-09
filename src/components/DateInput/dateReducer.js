@@ -31,10 +31,9 @@ export const dateReducer = (state = defaultState, action) => {
                 isFetching: false
             }
         case ADD:
-            let launchIndex = state.launchesData.indexOf(payload);
             return {
                 ...state,
-                favoritesData: [...state.favoritesData, state.launchesData[launchIndex]]
+                favoritesData: [...state.favoritesData, payload]
             };
         case REMOVE:
             let favs = [...state.favoritesData]

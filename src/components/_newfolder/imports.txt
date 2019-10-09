@@ -1,9 +1,0 @@
-basic imports for new js file
-import React from 'react';
-import "styles.scss"
-basic imports for new scss file
-@import "../variables";
-
-@media only screen and (min-width: $tabletWidth){
-
-}
