@@ -4,8 +4,8 @@ import "./styles.scss";
 export class LaunchImage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            showImages: false
+        this.state = {//need to add derivedstatefromprops(nextProps, prevState)
+            showImages: this.props.imgBool || false
         }
     }
     showImagesUpdate = () => {
@@ -24,13 +24,16 @@ export class LaunchImage extends React.Component {
                     <button className="showImagesButton"
                         onClick={this.showImagesUpdate}>
                         Show Images</button>}
+                
                 {this.state.showImages &&
-                    this.props.links.flickr_images.map((img, index) => {
+                    <div className="flickr">
+                    {this.props.links.flickr_images.map((img, index) => {
                         return <img src={img}
                             alt={"flickr " + index}
                             className="flickrImg"
                             key={"flickr " + index}></img>;
-                    })
+                    })}
+                    </div>
                 }
 
             </>

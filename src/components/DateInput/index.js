@@ -9,7 +9,6 @@ export class DateInput extends React.Component {
             start: "1979-09-19",
             end: Moment().format('YYYY-MM-DD'),
         }
-        this.props.callBack(this.state.start, this.state.end);
     }
 
     startChange = (e) => {
@@ -28,21 +27,23 @@ export class DateInput extends React.Component {
             <form className="dateInput">
                 <label htmlFor="startDate" className="dateLabel">Start Date:</label>
                 <input type="date" id="startDate"
-                    value={this.state.start} 
-                    onChange={this.startChange} 
-                    max = {this.state.end}
+                    value={this.state.start}
+                    onChange={this.startChange}
+                    max={this.state.end}
                 />
                 <label htmlFor="endDate" className="dateLabel">End Date:</label>
-                <input type="date" id="endDate" 
+                <input type="date" id="endDate"
                     value={this.state.end}
                     onChange={this.endChange}
-                    min = {this.state.start}
+                    min={this.state.start}
                 />
                 <button onClick={(e) => {
                     e.preventDefault();
-                    this.props.callBack(this.state.start, this.state.end)}}
-                     className="dateSubmit">Submit</button>
-            </form>
+                    this.props.getLaunches(this.state.start, this.state.end);
+                }
+                }
+                    className="dateSubmit">Submit</button>
+            </form >
         );
     }
 }

@@ -1,7 +1,6 @@
 @import "../variables";
 .favTitle {
-  margin: 10px;
-  position: absolute;
+  margin: 0px, 10px;
 }
 .favorites {
   width: 100%;
@@ -12,11 +11,15 @@
   }
 }
 @media only screen and (min-width: $tabletWidth) {
+  .favTitle {
+    margin: 0px;
+    padding: 0px, 10px;
+  }
   .favorites {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px 0px 0px 0px;
-    margin: 20px 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 10px 0px;
     justify-content: center;
 }
 }

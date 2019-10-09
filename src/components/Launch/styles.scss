@@ -24,17 +24,13 @@
     margin: 0px 0px 10px 0px;
   }
   .favoriteButton {
-    font-size: 30px;
+    font-size: 40px;
     color: pink;
     padding: 5px;
     height: 50px;
     width: 50px;
     margin: 20px 0px;
     text-align: center;
-  }
-  .favoriteButton:hover {
-    cursor: pointer;
-    font-size: 35px;
   }
   .launchDesc {
     @extend %Roboto;
@@ -60,6 +56,13 @@
     }
     .descButton{
       height: 35px;
+    }
+    .favoriteButton {
+      font-size: 30px;
+    }
+    .favoriteButton:hover {
+      cursor: pointer;
+      font-size: 35px;
     }
   }
   .launch:hover {
