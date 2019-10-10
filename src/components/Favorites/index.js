@@ -10,7 +10,7 @@ export class Favorites extends React.Component {
         }
     }
 
-    render = () => {
+    render(){
         return (
             <>
                 {this.props.favorites.length > 0 &&

@@ -3,13 +3,7 @@ import Launch  from '../Launch/container';
 import "./styles.scss";
 
 export class Launches extends React.Component {
-    componentDidMount = () => {
-
-    }
-
-    componentWillUnmount = () => {
-    }
-    render = () => {
+    render(){
         return (
             <div className="launches">
                 {this.props.launchesData !== undefined &&
