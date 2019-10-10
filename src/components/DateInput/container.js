@@ -4,8 +4,8 @@ import { getLaunches } from './actions';
 
 
 const mapStateToProps = ({ dateReducer }) => ({
-    startDate: dateReducer.startDate,
-    endDate: dateReducer.endDate
+    // startDate: dateReducer.startDate,
+    // endDate: dateReducer.endDate
 }
 )
 const mapDispatchToProps = (dispatch) => ({

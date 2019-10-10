@@ -7,9 +7,9 @@ describe("<Launches />", () => {
 
     describe("renders", ()=> {
         const wrapper = shallow(<Launches launchesData={LaunchesData.LaunchesArray} favorites = {[]}/>);
-        //console.log(LaunchesData.LaunchesArray);
         it("launch cards", () => {
-            expect(wrapper.find("Launch").exists()).toEqual(true);
+            expect(wrapper.find(".launches").exists()).toEqual(true);
+            expect(wrapper.find(".launches").children().length).toEqual(6);
         })
 
     })
