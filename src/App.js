@@ -20,7 +20,7 @@ class App extends React.Component {
   componentDidMount() {
   }
 
-  render = () => {
+  render(){
     return (
       <div className="app">
         <header>

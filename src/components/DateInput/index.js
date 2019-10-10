@@ -24,7 +24,7 @@ export class DateInput extends React.Component {
     componentDidMount(){
         this.props.getLaunches(this.state.start, this.state.end);
     }
-    render = () => {
+    render(){
 
         return (
             <form className="dateInput">
