@@ -11,7 +11,6 @@ export class Launch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            allBool: false,
             descBool: false,
             imgBool: false,
             payloadBool: false
@@ -29,14 +28,7 @@ export class Launch extends React.Component {
     render() {
         const data = this.props.data;
         return (
-            <section className="launch" onClick={() => {
-                this.setState({
-                    allBool: !this.state.allBool,
-                    descBool: !this.state.allBool,
-                    imgBool: !this.state.allBool,
-                    payloadBool: !this.state.allBool,
-                })
-            }}>
+            <section className="launch" >
                 <LaunchImage links={data.links} imgBool={this.state.imgBool} />
                 <h2 className="launchTitle">{data.mission_name}</h2>
                 <button className="favoriteButton"

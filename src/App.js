@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'moment';
 //import { DateInput } from './components/DateInput';
 import DateInput from './components/DateInput/container';
 import Favorites from './components/Favorites/container';
@@ -11,8 +12,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      startDate: "1979-09-19",
-      endDate: "2019-09-19",
+      startDate: "2002-05-06",
+      endDate: Moment().format('YYYY-MM-DD'),
       favorites: []
     }
   }
@@ -30,9 +31,9 @@ class App extends React.Component {
         <main>
           <Favorites />
           <h3 className="searchTitle">
-            {"SpaceX launches from " +
+            {/* {"SpaceX launches from " +
               this.state.startDate + " to " +
-              this.state.endDate}
+              this.state.endDate} */}
           </h3>
           <Launches />
         </main>

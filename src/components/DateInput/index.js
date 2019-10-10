@@ -6,7 +6,7 @@ export class DateInput extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            start: "1979-09-19",
+            start: "2002-05-06",
             end: Moment().format('YYYY-MM-DD'),
         }
     }
@@ -20,6 +20,9 @@ export class DateInput extends React.Component {
         this.setState({
             end: e.target.value
         });
+    }
+    componentDidMount = () => {
+        this.props.getLaunches(this.state.start, this.state.end);
     }
     render = () => {
 
