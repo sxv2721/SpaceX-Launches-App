@@ -21,7 +21,7 @@ export class DateInput extends React.Component {
             end: e.target.value
         });
     }
-    componentDidMount = () => {
+    componentDidMount(){
         this.props.getLaunches(this.state.start, this.state.end);
     }
     render = () => {
