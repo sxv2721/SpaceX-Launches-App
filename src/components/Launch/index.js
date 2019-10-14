@@ -1,6 +1,7 @@
 import React from 'react';
 import { Payload } from './components/Payload';
 import { LaunchImage } from './components/LaunchImage';
+import { Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
@@ -11,9 +12,8 @@ export class Launch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            descBool: false,
-            imgBool: false,
-            payloadBool: false
+            isShowingDescription: false,
+            isCurrentRoute: false
         }
     }
     /*
@@ -29,38 +29,53 @@ export class Launch extends React.Component {
         const data = this.props.data;
         return (
             <section className="launch" >
-                <LaunchImage links={data.links} imgBool={this.state.imgBool} />
+                <Route path={"/" + data.mission_name}
+                    children={({ match }) => {
+                        if (match !== null) {
+                            return (
+                                <LaunchImage links={data.links} isShowingImages={true} isCurrentRoute={true}/>
+                            );
+                        }
+                        else{
+                            return (
+                                <LaunchImage links={data.links} isShowingImages={false} isCurrentRoute={false}/>
+                            );
+                        }
+                    }} />
                 <h2 className="launchTitle">{data.mission_name}</h2>
                 <button className="favoriteButton"
                     onClick={(e) => {//dispatch favorites actions here.
-                        if (!this.props.heart) {
+                        if (!this.props.isFavorited) {
                             this.props.addFavorite(this.props.data);
                         }
                         else {
                             this.props.removeFavorite(this.props.data);
                         }
                     }
-                    }>{this.props.heart === true ?
+                    }>{this.props.isFavorited === true ?
                         <FontAwesomeIcon icon={faHeart} /> :
                         <FontAwesomeIcon icon={far.faHeart} />}
                 </button>
                 <h2 className="launchDate">{Moment(data.launch_date_utc).format('MMMM Do YYYY, h:mm:ss a')}</h2>
-                {data.details !== null &&
-                    <>
-                        <button className="descButton" onClick={() => {
-                            this.setState({
-                                descBool: !this.state.descBool
-                            })
-                        }}>
-                            {this.state.descBool === false ? <>Show Description</> : <>Hide Description</>}
-                        </button>
-                        {this.state.descBool === true && <p className="launchDesc">{data.details}</p>}
-                    </>
+                <Route path={"/" + data.mission_name} render={() => {
+                    return (data.details !== null ?
+                        <p className="launchDesc">{data.details}</p> :
+                        <p className="launchDesc">No Details</p>
+                    );
+                }} />
 
-                }
-
-                <Payload payloads={data.rocket.second_stage.payloads} payloadBool={this.state.payloadBool} />
+                <Payload payloads={data.rocket.second_stage.payloads} />
             </section>
         );
     }
 }
+
+/*
+<button className="descButton" onClick={() => {
+                            this.setState({
+                                isShowingDescription: !this.state.isShowingDescription
+                            })
+                        }}>
+                            {this.state.isShowingDescription === false ? <>Show Description</> : <>Hide Description</>}
+                        </button>
+*/

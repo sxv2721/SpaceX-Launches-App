@@ -5,12 +5,12 @@ export class Payload extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            clickBool: this.props.payloadBool || false
+            isShowingPayloads: false
         }
     }
     showPayloads = () =>{
         this.setState({
-            clickBool: !this.state.clickBool
+            isShowingPayloads: !this.state.isShowingPayloads
         })
     }
     render() {
@@ -33,10 +33,10 @@ export class Payload extends React.Component {
             <div className="payloadList">
                 <h4 className="payloadHeader">Payloads:</h4>
                 <button onClick={this.showPayloads} 
-                className="payloadButton">{this.state.clickBool===false ? 
+                className="payloadButton">{this.state.isShowingPayloads===false ? 
                 <>Show Payloads</>: <>Hide Payloads</>}</button>
                 <ol>
-                    {this.state.clickBool===true && payloadMap}
+                    {this.state.isShowingPayloads===true && payloadMap}
                 </ol>
             </div>
         )

@@ -6,23 +6,23 @@ export class DateInput extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            start: "2002-05-06",
-            end: Moment().format('YYYY-MM-DD'),
+            startDate: "2002-05-06",
+            endDate: Moment().format('YYYY-MM-DD'),
         }
     }
 
-    startChange = (e) => {
+    startDateChange = (e) => {
         this.setState({
-            start: e.target.value
+            startDate: e.target.value
         });
     }
-    endChange = (e) => {
+    endDateChange = (e) => {
         this.setState({
-            end: e.target.value
+            endDate: e.target.value
         });
     }
     componentDidMount(){
-        this.props.getLaunches(this.state.start, this.state.end);
+        this.props.getLaunches(this.state.startDate, this.state.endDate);
     }
     render(){
 
@@ -30,19 +30,19 @@ export class DateInput extends React.Component {
             <form className="dateInput">
                 <label htmlFor="startDate" className="dateLabel">Start Date:</label>
                 <input type="date" id="startDate"
-                    value={this.state.start}
-                    onChange={this.startChange}
-                    max={this.state.end}
+                    value={this.state.startDate}
+                    onChange={this.startDateChange}
+                    max={this.state.endDate}
                 />
                 <label htmlFor="endDate" className="dateLabel">End Date:</label>
                 <input type="date" id="endDate"
-                    value={this.state.end}
-                    onChange={this.endChange}
-                    min={this.state.start}
+                    value={this.state.endDate}
+                    onChange={this.endDateChange}
+                    min={this.state.startDate}
                 />
                 <button onClick={(e) => {
                     e.preventDefault();
-                    this.props.getLaunches(this.state.start, this.state.end);
+                    this.props.getLaunches(this.state.startDate, this.state.endDate);
                 }
                 }
                     className="dateSubmit">Submit</button>
