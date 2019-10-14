@@ -2,6 +2,13 @@
 
 .launches {
   width: 100%;
+  .navLink{
+    color: black;
+    text-decoration: none;
+  }
+  .activeLink{
+    color: white;
+  }
 }
 @media only screen and (min-width: $tabletWidth) {
   .launches {
