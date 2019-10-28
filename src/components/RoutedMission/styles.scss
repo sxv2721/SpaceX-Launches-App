@@ -1,0 +1,73 @@
+@import "../variables";
+
+.routedMission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @extend %Audiowide;
+  background-color: $color2;
+  margin: 10px 0px;
+  padding: 20px;
+  .routedHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    .linkHome {
+      align-self: flex-start;
+      text-decoration: none;
+      color: black;
+      font-style: normal;
+    }
+    .flightNumber {
+      align-self: flex-end;
+      margin-top: 0px;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: transparent;
+  }
+  .favoriteButton {
+    font-size: 40px;
+    color: pink;
+    padding: 5px;
+    height: 50px;
+    width: 50px;
+    margin: 20px 0px;
+    text-align: center;
+    align-self: flex-end;
+  }
+  .flickr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .flickrImg {
+      margin: 5px 0px;
+      max-width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: $tabletWidth) {
+  .routedMission {
+    .favoriteButton {
+      font-size: 30px;
+    }
+    .favoriteButton:hover {
+      cursor: pointer;
+      font-size: 35px;
+    }
+    .linkHome:hover {
+      cursor: pointer;
+      font-size: 25px;
+    }
+    .launchImg {
+      margin: 5px 0px;
+      height: 280px;
+      width: 280px;
+    }
+  }
+}

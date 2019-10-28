@@ -1,22 +1,20 @@
 {
     "links": {
         "mission_patch": "https://images2.imgbox.com/37/c4/jRAk115c_o.png",
-        "flickr_images": [
-            "https://farm9.staticflickr.com/8617/16789019815_f99a165dc5_o.jpg",
-            "https://farm8.staticflickr.com/7619/16763151866_35a0a4d8e1_o.jpg",
-            "https://farm9.staticflickr.com/8569/16169086873_4d8829832e_o.png"
-        ]
+        "flickr_images": []
     },
     "mission_name": "test",
     "launch_date_utc": "2014-01-06T18:06:00.000Z",
     "details": null,
     "rocket": {
         "second_stage": {
-            "payloads": [{
-                "payload_id": "testPayload",
-                "nationality": "testCountry",
-                "payload_type": "testType"
-            }]
+            "payloads": [
+                {
+                    "payload_id": "testPayload",
+                    "nationality": "testCountry",
+                    "payload_type": "testType"
+                }
+            ]
         }
     },
     "flight_number": 0
