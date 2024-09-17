@@ -14,9 +14,9 @@
         "second_stage": {
             "payloads": [
                 {
-                "payload_id": "testPayload",
-                "nationality": "testCountry",
-                "payload_type": "testType"
+                    "payload_id": "testPayload",
+                    "nationality": "testCountry",
+                    "payload_type": "testType"
                 }
             ]
         }

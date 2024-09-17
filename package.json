@@ -67,7 +67,6 @@
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    
     "make-badges": "node_modules/.bin/jest-badges-readme",
     "make-readme": "npx jest --coverage",
     "postmake-readme": "npm run make-badges"
@@ -98,6 +97,7 @@
     "jest-coverage-badges": "^1.1.2",
     "moment": "^2.24.0",
     "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",

@@ -4,14 +4,14 @@
   grid-template: 1fr 1fr / 100px 225px;
   justify-content: center;
   width: 100%;
-  margin:  0px 10px;
+  margin: 0px 10px;
   @extend %Audiowide;
   .dateLabel {
     padding-top: 5px;
     @extend %Roboto;
   }
-  #startDate,
-  #endDate,
+  .startDate,
+  .endDate,
   .dateLabel {
     margin: 10px;
     font-size: 15px;

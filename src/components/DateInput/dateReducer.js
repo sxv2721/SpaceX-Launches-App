@@ -1,5 +1,3 @@
-
-
 const DATE = "CHANGE_DATES";
 const RECEIVE = "RECEIVE_LAUNCHES";
 const ADD = "ADD_FAVORITE";
@@ -11,10 +9,10 @@ const defaultState = {
     endDate: null,
     isFetching: false,
     launchesData: [],
-    favoritesData: []
-}
+    favoritesData: [],
+};
 export const dateReducer = (state = defaultState, action) => {
-    const { type, payload } = action
+    const { type, payload } = action;
     switch (type) {
         case DATE:
             const { start, end } = payload;
@@ -22,28 +20,28 @@ export const dateReducer = (state = defaultState, action) => {
                 ...state,
                 startDate: start,
                 endDate: end,
-                isFetching: true
-            }
+                isFetching: true,
+            };
         case RECEIVE:
             return {
                 ...state,
                 launchesData: payload,
-                isFetching: false
-            }
+                isFetching: false,
+            };
         case ADD:
             return {
                 ...state,
-                favoritesData: [...state.favoritesData, payload]
+                favoritesData: [...state.favoritesData, payload],
             };
         case REMOVE:
-            let favs = [...state.favoritesData]
+            let favs = [...state.favoritesData];
             let favIndex = favs.indexOf(payload);
             favs.splice(favIndex, 1);
             return {
                 ...state,
-                favoritesData: favs
+                favoritesData: favs,
             };
         default:
             return state;
     }
-}
+};
